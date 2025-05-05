@@ -10,8 +10,6 @@ This project implements a Digital Predistortion (DPD) algorithm to linearize pow
 3. [How to Use `Run_DPD_Algorithm`](#how-to-use-run_dpd_algorithm)
 4. [Input and Output Description](#input-and-output-description)
 5. [Example Usage](#example-usage)
-6. [License](#license)
-7. [Contact](#contact)
 
 # Project Overview
 
@@ -29,12 +27,14 @@ To run this project, you need:
 
 2. Signal Processing Toolbox (for functions like pwelch and resample).
 
-3. Input and output signal data files (e.g., fxp_40MHz_sample_rate_H7B20L1000.mat and test.mat).
+3. Input and output signal data files (e.g., fxp_40MHz_sample_rate_H7B20L1000.mat and test.mat) which are included in this repository.
+
+4. See HowToMatlab.md for easily cloning this repository into your local matlab session/ 
 
 # How to Use Run_DPD_Algorithm
 
-The Run_DPD_Algorithm function is the main entry point for running the DPD algorithm. It takes three input arguments and returns two outputs.
-`[NMSE, Cond_num] = Run_DPD_Algorithm(Polynomial_order, Polynomial_Memory, Bool_Orthogonal);`
+The Run_DPD_Algorithm function is the main entry point for running the DPD algorithm. It takes three input arguments and returns three outputs.
+`[NMSE, Cond_num,Y_fit] = Run_DPD_Algorithm(Polynomial_order, Polynomial_Memory, Bool_Orthogonal);`
 
 ## Input Arguments
 
@@ -53,14 +53,16 @@ The Run_DPD_Algorithm function is the main entry point for running the DPD algor
 
 ## Output Arguments
 
-1. NMSE:
+1. **NMSE**:
 The Normalized Mean Squared Error (NMSE) between the input and output signals after applying DPD.
 This metric quantifies the performance of the DPD algorithm.
 
-2. Cond_num:
+2.**Cond_num**:
 The condition number of the matrix used in the DPD coefficient calculation.
 This indicates the numerical stability of the solution.
 
+3. **Y_fit**
+The outsignal produced by the amplifier after aplying DPD
 ## Input and Output Description
 
 1. Input Data
@@ -77,7 +79,7 @@ Below is an example of how to use the Run_DPD_Algorithm function:
 
 Example 1: Run DPD with Default Parameters
 % Run DPD with a 5th-order polynomial, memory depth of 1, and orthogonal polynomials
-`[NMSE, Cond_num] = Run_DPD_Algorithm(5, 1, 1);`
+`[NMSE, Cond_num, DPD_sig] = Run_DPD_Algorithm(5, 1, 1);`
 Example 1 Output:
 
 
