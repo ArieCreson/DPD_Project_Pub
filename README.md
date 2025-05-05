@@ -1,4 +1,3 @@
-Testing!
 # Digital Predistortion (DPD) Algorithm
 
 This project implements a Digital Predistortion (DPD) algorithm to linearize power amplifiers (PAs) in wireless communication systems. The DPD algorithm compensates for nonlinearities in the PA by predistorting the input signal.
