@@ -68,7 +68,7 @@ The outsignal produced by the amplifier after aplying DPD
 1. Input Data
 The input signal (z) is loaded from fxp_40MHz_sample_rate_H7B20L1000.mat.
 
-The measured output signal (Y) is loaded from test.mat.
+The signal (Y) is loaded from test.mat.
 
 2. Output Data
 The function returns the NMSE and condition number as metrics for evaluating the DPD performance.
@@ -80,7 +80,7 @@ Below is an example of how to use the Run_DPD_Algorithm function:
 Example 1: Run DPD with Default Parameters
 % Run DPD with a 5th-order polynomial, memory depth of 1, and orthogonal polynomials
 `[NMSE, Cond_num, DPD_sig] = Run_DPD_Algorithm(5, 1, 1);`
-Example 1 Output:
+Example 1 output:
 
 
 ```
@@ -95,7 +95,7 @@ Cond_num =
 
 >> 
 ```
-Example plot ouput: 
+Example plot output: 
 ### Plot 1
 ![plot](./images/untitled1.png)
 
