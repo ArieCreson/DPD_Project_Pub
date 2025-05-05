@@ -95,6 +95,7 @@ Cond_num =
 
 >> 
 ```
+Example plot ouput: 
 ### Plot 1
 ![plot](./images/untitled1.png)
 
